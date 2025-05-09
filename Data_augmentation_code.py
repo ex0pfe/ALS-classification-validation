@@ -1,10 +1,10 @@
-# Clonar tu repositorio
+
 !git clone https://github.com/ex0pfe/ALS-classifiaction-validation.git
 
-# Clonar el repositorio original
+
 !git clone https://github.com/YQ-XiaMLTech/ALS-classification.git
 
-# Cambiar al directorio del repositorio original
+
 %cd ALS-classification
 
 import sys
@@ -25,7 +25,7 @@ from process_dataset import pre_data
 from torchvision.transforms.functional import to_pil_image
 import os
 
-# Cargar el modelo
+
 model = SE_DenseNet(num_classes=2, dropout_rate=0.5)
 !wget https://github.com/YQ-XiaMLTech/ALS-classification/raw/main/saves/model_fullDenseSE.pth -P /content/
 model = torch.load('/content/model_fullDenseSE.pth', map_location='cpu', weights_only=False)
@@ -68,7 +68,7 @@ def apply_gradcam(input_tensor, model, target_layer, target_category):
     return heatmap
 
 def main():
-    # NUEVA RUTA A TUS IMÁGENES
+   
     img_folder_path = "../ALS-classifiaction-validation/data_augmentation/data_augmentation/color_denoising"  #Change data augmentation technique
     img_files = [f for f in os.listdir(img_folder_path) if f.endswith('.tif')]
 
